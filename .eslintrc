@@ -2,7 +2,9 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react",
+    "tailwindcss"
   ],
   "extends": [
     "eslint:recommended",
@@ -55,39 +57,14 @@
         // If you are using "prettier/prettier" rule,
         // you don't need to format inside <script> as it will be formatted as a `.astro` file.
         "prettier/prettier": "off",
-        // "import/extensions": [
-        //   "error",
-        //   "ignorePackages",
-        //   {
-        //     "js": "never",
-        //     "jsx": "never",
-        //     "ts": "never",
-        //     "tsx": "never",
-        //     "": "never"
-        //   }
-        // ], // Avoid missing file extension errors in .astro files
-        // "import/no-unresolved": [
-        //   "warn",
-        //   {
-        //     "ignore": ["@/*"]
-        //   }
-        // ], // Disable no-unresolved rule for .astro files
-        // "react/jsx-filename-extension": [
-        //   1,
-        //   {
-        //     "extensions": [".astro"]
-        //   }
-        // ], // Accept jsx in astro files
-        // "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-        // "react/require-default-props": "off", // Allow non-defined react props as undefined
         "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
         "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
-        // "tailwindcss/classnames-order": [
-        //   "warn",
-        //   {
-        //     "officialSorting": true
-        //   }
-        // ], // Follow the same ordering as the official plugin `prettier-plugin-tailwindcss`
+        "tailwindcss/classnames-order": [
+          "warn",
+          {
+            "officialSorting": true
+          }
+        ], // Follow the same ordering as the official plugin `prettier-plugin-tailwindcss`
         // "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
         // "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
         "@typescript-eslint/no-unused-vars": "off"
