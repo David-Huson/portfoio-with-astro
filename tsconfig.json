@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     // Enable top-level await, and other modern ESM features.
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2022",
+    "module": "ES2022",
     // Enable node-style module resolution, for things like npm package imports.
     "moduleResolution": "node",
     // Enable JSON imports.
@@ -10,7 +10,7 @@
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Add type definitions for our Astro runtime.
-    "types": ["astro/client"],
+    "types": ["vite/client", "node"],
     "jsx": "react",
     "allowSyntheticDefaultImports": true
 
@@ -23,11 +23,5 @@
     // "skipLibCheck": true,
     // "forceConsistentCasingInFileNames": true,
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.astro",
-    "src/**/*.d.ts",
-    "./node_modules/@types"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"]
 }

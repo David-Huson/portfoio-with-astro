@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import About from '../../components/sections/about/About.astro';
+
+const title = 'About Me';
+const description = 'A little about me.';
+const permalink = 'https://davidhuson.dev/';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  canonicalURL={Astro.canonicalURL.href}
+>
+  <About />
+</BaseLayout>

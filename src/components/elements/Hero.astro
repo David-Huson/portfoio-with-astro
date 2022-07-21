@@ -1,0 +1,27 @@
+---
+import Wrapper from '../../layouts/Wrapper.astro';
+---
+
+<Wrapper>
+  <div class='flex align-middle justify-center'>
+    <div class='pt-14'>
+      <div class='flex'>
+        <h2 class='text-7xl'>Hi there, I'm David</h2>
+        <span class='text-7xl'>&#128075;</span>
+      </div>
+      <div class='flex flex-col justify-start'>
+        <h3 class='text-2xl mb-10'>An aspiring Software Engineer.</h3>
+        <!-- This button is not finished. need to add a contact page or section with a form -->
+        <button
+          type='button'
+          class='bg-transparent hover:bg-amber-400 text-amber-400 font-semibold hover:text-white py-2 px-4 border border-amber-400 hover:border-transparent rounded-lg w-max'
+        >
+          Lets Connect!
+        </button>
+      </div>
+    </div>
+    <div id='photo' class='flex justify-end'>
+      <img class='w-1/2' src='/avatar.svg' alt='avatar' />
+    </div>
+  </div>
+</Wrapper>

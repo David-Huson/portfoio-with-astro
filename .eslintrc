@@ -78,7 +78,7 @@
       // It's the setting you need when using TypeScript.
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
+        "extraFileExtensions": [".astro", ".d.ts"]
       },
       "rules": {
         "astro/no-conflict-set-directives": "error",

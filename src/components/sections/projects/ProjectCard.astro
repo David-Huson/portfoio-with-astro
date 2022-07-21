@@ -1,0 +1,24 @@
+---
+import type { Project } from '../../../types/sanity-types.d';
+const { title, projectLink, description, tags }: Project = Astro.props.project;
+---
+
+<div
+  class='col-span-1 flex flex-col bg-white/30 border-white/70 backdrop-blur-xl rounded transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:bg-slate-100/90 dark:hover:bg-dark/90'
+>
+  <a href={projectLink}>
+    <h3 class='m-3 font-bold text-4xl text-white'>{title}</h3>
+    <p
+      class='text-md text-justify mx-3 dark:text-white text-slate-900 text-base'
+    >
+      {description}
+    </p>
+    <div class='flex flex-wrap mt-auto pt-3 text-xs'>
+      {tags.map((tag: string) => (
+        <span class="text-sm font-semibold text-amber-300/80 mb-3 ml-3">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </a>
+</div>

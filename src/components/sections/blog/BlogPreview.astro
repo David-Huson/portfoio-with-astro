@@ -1,0 +1,19 @@
+---
+import type { Post } from '../../../types/sanity-types.d';
+import { getSanityImageUrl } from '../../../utils/helpers';
+const { title, excerpt, mainImage, slug }: Post = Astro.props.post;
+---
+
+<div
+  class='col-span-1 flex flex-col bg-white/30 border-white/70 backdrop-blur-xl rounded transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100'
+>
+  <a href={`/blog/${slug.current}`}>
+    <img src={getSanityImageUrl(mainImage).url()} loading='lazy' />
+    <h3 class='m-3 font-bold text-4xl text-white'>{title}</h3>
+    <p
+      class='text-md text-justify mx-3 dark:text-white text-slate-900 text-base'
+    >
+      {excerpt}
+    </p>
+  </a>
+</div>

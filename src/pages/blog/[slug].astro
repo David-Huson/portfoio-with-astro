@@ -1,0 +1,59 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro'
+import Wrapper from '../../layouts/Wrapper.astro'
+import { client } from '../../lib/sanityClient'
+import { AllPosts } from '../../lib/api'
+import { getSanityImageUrl } from '../../utils/helpers'
+import { Post } from '../../types/sanity-types.d'
+import { formatBlogPostDate } from '../../utils/helpers'
+import { Code } from 'astro/components'
+import { PortableText } from '@portabletext/react'
+
+// eslint-disable-next-line import/prefer-default-export
+export async function getStaticPaths() {
+  const allBlogPosts = await client.fetch(AllPosts)
+
+  return await allBlogPosts.map((post: Post) => ({
+    params: { slug: post.slug.current },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+
+---
+
+<BlogPostLayout
+  title={post.title}
+  ogImageUrl={getSanityImageUrl(post.mainImage).width(1200).url()}
+>
+  <!-- <ul>
+    {post.categories.map(
+      (category: { slug: { current: string }, title: string }) => (
+        <li>
+          <a href={`/blog/category/${category.slug.current}`}>
+            {category.title}
+          </a>
+        </li>
+      )
+    )}
+  </ul> -->
+    <Wrapper>
+    <article class='post-content__article' >
+      {post.mainImage && (
+      <img width="720" height="420" class="post-main__img" loading="lazy" src={getSanityImageUrl(post.mainImage).url()} />
+      )}
+      <h1>{post.title}</h1>
+      <time>{formatBlogPostDate(post.publishedAt)}</time>
+      {post.author && <p>By {post.author.name}</p>}
+  
+      {post.body.map((block: any) => (
+        (block._type == 'code') 
+        ?
+        <Code code={block.code} lang={block.language} theme={'github-light'} />
+        :
+        <PortableText value={block} />
+      ))}
+    </article>
+  </Wrapper>
+</BlogPostLayout>
