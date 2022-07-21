@@ -10,7 +10,18 @@
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Add type definitions for our Astro runtime.
-    "types": ["astro/client"]
+    "types": ["astro/client"],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+
+    // "noImplicitAny": true,
+    // "noImplicitReturns": true,
+    // "noImplicitThis": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "allowJs": false,
+    // "skipLibCheck": true,
+    // "forceConsistentCasingInFileNames": true,
   },
   "include": [
     "src/**/*.ts",
