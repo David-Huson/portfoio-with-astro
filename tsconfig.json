@@ -11,5 +11,12 @@
     "isolatedModules": true,
     // Add type definitions for our Astro runtime.
     "types": ["astro/client"]
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "src/**/*.d.ts",
+    "./node_modules/@types"
+  ]
 }
