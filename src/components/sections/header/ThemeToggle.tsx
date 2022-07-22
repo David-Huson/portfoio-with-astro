@@ -5,7 +5,7 @@ function ThemeToggle() {
     <div>
       <input
         type="checkbox"
-        name=""
+        name="themeToggle"
         id="checkbox"
         className="hidden"
         defaultChecked

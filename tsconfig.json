@@ -23,5 +23,5 @@
     // "skipLibCheck": true,
     // "forceConsistentCasingInFileNames": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "env.d.ts"]
 }
