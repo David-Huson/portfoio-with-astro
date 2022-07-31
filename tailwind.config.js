@@ -1,0 +1,70 @@
+module.exports = {
+  content: ['./src/**/*.{astro,html,js,jsx,md,ts,tsx,vue}'],
+  darkMode: 'class',
+  theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+    extend: {
+      colors: {
+        dark: '#090B0D',
+        light: {
+          txt: '#FAFAFB',
+          bg: 'E7E7E7',
+        },
+        gray: {
+          light: '#637081',
+          md: '#393B3C',
+          dark: '#282A2F',
+        },
+        yellow: {
+          dull: '#637081',
+          bright: '#FFBF00',
+        },
+        blue: {
+          light: '2AB3FA',
+          dark: '#0D3B66',
+          900: '#101218',
+        },
+        pink: '#D8135B',
+        orange: '#FB5012',
+        sage: '#5C6F68',
+        lavender: '#CBC5EA',
+        green: '#3BC14A',
+        magenta: '#ff3366',
+        purple: '#6665DD',
+      },
+      fontFamily: {
+        heading: 'Montserrat',
+        subheading: 'Lora',
+        body: 'Hind Madurai',
+      },
+      typography: ({ theme }) => {
+        return {
+          DEFAULT: {
+            css: {
+              '--tw-prose-body': theme('colors.dark'),
+              '--tw-prose-headings': theme('colors.dark'),
+              '--tw-prose-links': theme('colors.dark'),
+              '--tw-prose-code': theme('colors.dark'),
+              '--tw-prose-pre-bg': theme('colors.dark'),
+              '--tw-prose-invert-body': theme('colors.light.txt'),
+              '--tw-prose-invert-headings': theme('colors.light.txt'),
+              '--tw-prose-invert-links': theme('colors.white'),
+              '--tw-prose-invert-code': theme('colors.white'),
+              '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+            },
+          },
+        };
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/typography')({
+      className: 'type',
+    }),
+  ],
+};
