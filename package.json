@@ -19,6 +19,7 @@
     "@astrojs/tailwind": "^0.2.4",
     "@commitlint/config-conventional": "^17.0.3",
     "@sanity/block-content-to-markdown": "^0.0.5",
+    "@tailwindcss/typography": "^0.5.4",
     "@types/estree": "^1.0.0",
     "@types/node": "^18.0.6",
     "@types/react-dom": "^18.0.6",
