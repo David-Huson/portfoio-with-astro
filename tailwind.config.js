@@ -39,8 +39,8 @@ module.exports = {
         purple: '#6665DD',
       },
       fontFamily: {
-        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        serif: ['Lora', ...defaultTheme.fontFamily.serif],
+        heading: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        subheading: ['Lora', ...defaultTheme.fontFamily.serif],
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
@@ -66,6 +66,33 @@ module.exports = {
               '--tw-prose-invert-links': theme('colors.white'),
               '--tw-prose-invert-code': theme('colors.white'),
               '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+              h1: {
+                fontFamily: [theme('fontFamily.heading')],
+                fontSize: theme('fontSize.3xl'),
+              },
+              h2: {
+                fontFamily: [theme('fontFamily.heading')],
+                fontSize: theme('fontSize.2xl'),
+              },
+              h3: {
+                fontFamily: [theme('fontFamily.heading')],
+                fontSize: theme('fontSize.xl'),
+              },
+              h4: {
+                fontFamily: [theme('fontFamily.subheading')],
+                fontWeight: 400,
+                fontSize: theme('fontSize.lg'),
+              },
+              h5: {
+                fontFamily: [theme('fontFamily.subheading')],
+                fontSize: theme('fontSize.md'),
+              },
+              p: {
+                fontFamily: [theme('fontFamily.body')],
+              },
+              a: {
+                fontFamily: [theme('fontFamily.body')],
+              },
             },
           },
         };

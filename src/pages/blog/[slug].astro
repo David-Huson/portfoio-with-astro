@@ -27,7 +27,7 @@ const { post } = Astro.props
   ogImageUrl={getSanityImageUrl(post.mainImage).width(1200).url()}
 >
   <Wrapper> 
-      <article class="type dark:type-invert type-p:font-body type-a:font-body px-5 max-w-full">
+      <article class="type dark:type-invert px-5 max-w-full">
         {post.mainImage && (
         <img width="720" height="420" class="post-main__img" loading="lazy" src={getSanityImageUrl(post.mainImage).url()} />
         )}
