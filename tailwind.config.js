@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,ts,tsx,vue}'],
   darkMode: 'class',
@@ -38,9 +39,18 @@ module.exports = {
         purple: '#6665DD',
       },
       fontFamily: {
-        heading: 'Montserrat',
-        subheading: 'Lora',
-        body: 'Hind Madurai',
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        serif: ['Lora', ...defaultTheme.fontFamily.serif],
+        body: ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        sm: '0.667rem',
+        base: '1rem',
+        md: '1.5rem',
+        lg: '2.25rem',
+        xl: '3.375rem',
+        '2xl': '5.063rem',
+        '3xl': '7.594rem',
       },
       typography: ({ theme }) => {
         return {
