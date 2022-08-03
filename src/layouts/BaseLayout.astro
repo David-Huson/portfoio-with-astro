@@ -7,24 +7,21 @@ const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
 ---
 
 <!DOCTYPE html>
-<html lang='en' class='dark'>
+<html lang="en" class="dark">
   <head>
     <script>
-      const checkbox = document.querySelector('#checkbox');
+      const checkbox: HTMLInputElement = document.querySelector('#checkbox');
       const html = document.querySelector('html');
-
       const toggleDarkMode = () => {
         checkbox!.checked
           ? html.classList.add('dark')
           : html.classList.remove('dark');
-      };
-
-      // calling the function directly
+      }; // calling the function directly
       toggleDarkMode();
       checkbox.addEventListener('click', toggleDarkMode);
     </script>
     <style>
-     @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Roboto:wght@300;400;500&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:wght@300;400;500&display=swap');
     </style>
     <BaseHead
       title={title}
@@ -36,9 +33,9 @@ const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
     />
     <Navigation client:load />
   </head>
-  <body class='bg-slate-100 dark:bg-dark text-slate-900 dark:text-slate-50'>
+  <body class="bg-light-bg dark:bg-dark text-dark dark:text-light-txt">
     <main>
-      <slot></slot>
+      <slot />
     </main>
   </body>
 </html>

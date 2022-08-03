@@ -1,27 +1,36 @@
 ---
-import Wrapper from '../../layouts/Wrapper.astro';
+// import Wrapper from '../../layouts/Wrapper.astro';
+// import heroImage from '../../assets/heroImage.png';
+// import { Picture } from '@astrojs/image/components';
 ---
 
-<Wrapper>
-  <div class='flex align-middle justify-center'>
-    <div class='pt-14'>
-      <div class='flex'>
-        <h2 class='text-7xl'>Hi there, I'm David</h2>
-        <span class='text-7xl'>&#128075;</span>
-      </div>
-      <div class='flex flex-col justify-start'>
-        <h3 class='text-2xl mb-10'>An aspiring Software Engineer.</h3>
-        <!-- This button is not finished. need to add a contact page or section with a form -->
-        <button
-          type='button'
-          class='bg-transparent hover:bg-amber-400 text-amber-400 font-semibold hover:text-white py-2 px-4 border border-amber-400 hover:border-transparent rounded-lg w-max'
-        >
-          Lets Connect!
-        </button>
-      </div>
-    </div>
-    <div id='photo' class='flex justify-end'>
-      <img class='w-1/2' src='/avatar.svg' alt='avatar' />
+<div class="flex flex-row justify-center align-middle mx-10 space-x-10">
+  <div class="type dark:type-invert pt-16 leading-tight">
+    <h1 class="text-xl font-normal">
+      Hi there &#128075; <br />I'm <span class="text-2xl text-orange font-bold"
+        >David
+      </span>
+    </h1>
+    <h5 class="-mt-9 font-normal">
+      I'm an aspiring software engineer. Devoted to building efficient,
+      maintainable solutions.
+    </h5>
+    <div class="flex-row">
+      <button
+        class="bg-blue-dark dark:bg-yellow-bright text-light-txt dark:text-dark font-body font-bold py-3 mt-3 rounded w-1/3 hover:scale-110 hover:translate-y-1 ease-in-out duration-500"
+        >Contact me
+      </button>
+      <button
+        class="bg-yellow-dull dark:bg-lavender text-dark font-body font-bold py-3 mt-3 ml-4 rounded w-1/3 hover:scale-110 hover:translate-y-1 ease-in-out duration-500"
+        >Contact me
+      </button>
     </div>
   </div>
-</Wrapper>
+  <div class="max-h-[450px] max-w-[450px]">
+    <img
+      src="/heroImage.png"
+      class="h-full w-full"
+      alt="Hero Image. A picture of me looking off into the distance pensively."
+    />
+  </div>
+</div>

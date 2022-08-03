@@ -22,7 +22,7 @@ module.exports = {
           dark: '#282A2F',
         },
         yellow: {
-          dull: '#637081',
+          dull: '#FFAE03',
           bright: '#FFBF00',
         },
         blue: {
@@ -44,13 +44,13 @@ module.exports = {
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        sm: '0.667rem',
-        base: '1rem',
-        md: '1.5rem',
-        lg: '2.25rem',
-        xl: '3.375rem',
-        '2xl': '5.063rem',
-        '3xl': '7.594rem',
+        sm: ['0.667rem', '1'],
+        base: ['1rem', '1'],
+        md: ['1.5rem', '1'],
+        lg: ['2.25rem', '1'],
+        xl: ['3.375rem', '1'],
+        '2xl': ['5.063rem', '1'],
+        '3xl': ['7.594rem', '1'],
       },
       typography: ({ theme }) => {
         return {
@@ -80,7 +80,6 @@ module.exports = {
               },
               h4: {
                 fontFamily: [theme('fontFamily.subheading')],
-                fontWeight: 400,
                 fontSize: theme('fontSize.lg'),
               },
               h5: {
