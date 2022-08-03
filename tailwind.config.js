@@ -40,7 +40,7 @@ module.exports = {
       },
       fontFamily: {
         heading: ['Montserrat', ...defaultTheme.fontFamily.sans],
-        subheading: ['Lora', ...defaultTheme.fontFamily.serif],
+        subheading: ['Cormorant', ...defaultTheme.fontFamily.serif],
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
@@ -69,28 +69,49 @@ module.exports = {
               h1: {
                 fontFamily: [theme('fontFamily.heading')],
                 fontSize: theme('fontSize.3xl'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               h2: {
                 fontFamily: [theme('fontFamily.heading')],
                 fontSize: theme('fontSize.2xl'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               h3: {
                 fontFamily: [theme('fontFamily.heading')],
                 fontSize: theme('fontSize.xl'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               h4: {
                 fontFamily: [theme('fontFamily.subheading')],
                 fontSize: theme('fontSize.lg'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               h5: {
                 fontFamily: [theme('fontFamily.subheading')],
                 fontSize: theme('fontSize.md'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
+              },
+              h6: {
+                fontFamily: [theme('fontFamily.subheading')],
+                fontSize: theme('fontSize.base'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               p: {
                 fontFamily: [theme('fontFamily.body')],
+                fontSize: theme('fontSize.base'),
+                marginBlockEnd: 0,
+                marginBlockStart: 0,
               },
               a: {
                 fontFamily: [theme('fontFamily.body')],
+                fontSize: theme('fontSize.base'),
+                textDecoration: 'none',
               },
             },
           },
