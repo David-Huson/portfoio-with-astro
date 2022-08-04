@@ -1,22 +1,33 @@
 ---
+import { VscArrowRight } from 'react-icons/vsc';
 import type { Project } from '../../../types/sanity-types.d';
-const { title, projectLink, description, tags }: Project = Astro.props.project;
+const { title, projectLink, description, projectTags }: Project =
+  Astro.props.project;
 ---
 
 <div
-  class="col-span-1 flex flex-col h-48 bg-white/30 border-white/70 backdrop-blur-xl rounded transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:bg-slate-100/90 dark:hover:bg-dark/90"
+  class="type dark:type-invert w-96 h-48 flex flex-col bg-gradient-to-br from-dark/80 to-dark/10 backdrop-blur-xl border border-light-txt/30 rounded transition ease-in-out hover:-translate-y-1 hover:scale-100 hover:bg-slate-100/90 dark:hover:bg-dark/80"
 >
-  <h3 class="m-3 font-bold text-4xl text-white">{title}</h3>
-  <p class="text-md text-justify mx-3 dark:text-white text-slate-900 text-base">
+  <h3 class="pl-2 text-lg my-3">{title}</h3>
+  <p class="pl-3 h-full">
     {description}
   </p>
-  <div class="h-full relative">
-    <div class="absolute bottom-0 my-2 mx-2">
-      {tags.map((tag: string) => (
-        <span class="bottom-0 text-sm font-semibold text-amber-300/80 mb-3 ml-3">
-          {tag}
-        </span>
-      ))}
+  <div class="w-2/3 ml-2">
+    <div class="flex flex-row flex-wrap space-x-4 justify-start">
+      {projectTags &&
+        projectTags.map((tag) => (
+          <span class="font-normal mb-2 text-orange">{tag.label}</span>
+        ))}
     </div>
+  </div>
+  <div class="absolute bottom-2 right-2">
+    <a
+      href={projectLink}
+      target="_self"
+      class="inline-flex items-center space-x-2"
+    >
+      <span>See More</span>
+      <VscArrowRight className="inline-block" />
+    </a>
   </div>
 </div>
