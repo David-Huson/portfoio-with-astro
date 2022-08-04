@@ -1,5 +1,6 @@
 ---
-import { VscArrowRight } from 'react-icons/vsc';
+// import { VscArrowRight } from 'react-icons/vsc';
+import { ArrowRight } from 'react-feather';
 import type { Post } from '../../../types/sanity-types.d';
 import { getSanityImageUrl } from '../../../utils/helpers';
 const { mainImage, title, excerpt, categories, slug }: Post = Astro.props.post;
@@ -43,7 +44,8 @@ const { mainImage, title, excerpt, categories, slug }: Post = Astro.props.post;
         class="inline-flex items-center space-x-2"
       >
         <span>See More</span>
-        <VscArrowRight className="inline-block" />
+        <ArrowRight className="inline-flex" />
+        <!-- <VscArrowRight className="inline-block" /> -->
       </a>
     </div>
   </div>
