@@ -14,6 +14,8 @@ function ThemeToggle() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
+          width="100"
+          height="100"
           fill="currentColor"
           stroke="currentColor"
           className="h-4 w-4"
