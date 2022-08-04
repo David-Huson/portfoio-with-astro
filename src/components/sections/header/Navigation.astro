@@ -1,5 +1,4 @@
 ---
-import { site } from '../../../data/site';
 import ThemeToggle from './ThemeToggle';
 import SocialIcons from '../../elements/SocialIcons';
 
@@ -11,28 +10,23 @@ const nav = [
 ---
 
 <div
-  class="max-w-6xl  mx-auto px-4 py-5 type dark:type-invert leading-none no-underline"
+  class="relative top-0 max-w-full mx-auto px-4 py-5 type dark:type-invert leading-none no-underline bg-gradient-to-b from-dark to-transparent"
 >
-  <div class="flex  md:flex-row justify-between items-center">
-    <div class="flex flex-col">
+  <div class="flex flex-row justify-between items-baseline mx-56">
+    <div class="flex flex-col w-fit">
       <a href="/">
-        <h1 class="font-semibold text-xl dark:text-gray-100 ">
-          {site.name}
-        </h1>
-        <h6 class="text-gray-light dark:text-gray-300 ">
-          ASPIRING SOFTWARE ENGINEER
-        </h6>
+        <div class="w-56 h-auto">
+          <img class="dark:flex hidden my-2" src="/lightLogo.png" />
+          <img class="dark:hidden flex my-2" src="/darkLogo.png" />
+        </div>
+        <h6 class="text-light-txt/75">SOFTWARE ENGINEER</h6>
       </a>
     </div>
     <!-- Desktop nav links -->
     <div class="space-x-8 hidden md:block">
       <div class="flex space-x-4">
         {nav.map((item) => (
-          <a
-            href={item.link}
-            target={'_self'}
-            class="text-base text-gray-600 dark:text-gray-300 font-normal"
-          >
+          <a href={item.link} target={'_self'} class="text-md">
             {item.name}
           </a>
         ))}
@@ -41,11 +35,7 @@ const nav = [
     <!-- Mobile nav links -->
     <div class="space-x-8 block md:hidden mt-4">
       {nav.map((item) => (
-        <a
-          href={item.link}
-          target={'_self'}
-          class="text-base font-normal text-gray-600 dark:text-gray-300"
-        >
+        <a href={item.link} target={'_self'} class="text-sm">
           {item.name}
         </a>
       ))}
