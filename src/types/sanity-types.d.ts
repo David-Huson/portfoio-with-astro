@@ -1,3 +1,8 @@
+interface Tag {
+  label: string;
+  value: string;
+}
+
 export interface Post {
   _id: string;
   _createdAt: string;
@@ -16,6 +21,8 @@ export interface Post {
     current: string;
   };
   body: [object];
+  postTags: [Tag];
+  categories: [category: string];
 }
 
 export interface Project {
@@ -37,5 +44,5 @@ export interface Project {
     };
     name: string;
   };
-  tags: [];
+  projectTags: [Tag];
 }

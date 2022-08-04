@@ -3,10 +3,25 @@ export const AllProjects = `*[_type == "project"] {
   title,
   description,
   projectLink,
-  tags,
+  projectTags,
   mainImage {
   asset
   }
 }`;
 
-export const AllPosts = `*[_type == 'post'][0...3] {...}`;
+export const AllPosts = `*[_type == 'post'][0...6] {
+  _id,
+  _createdAt,
+  title,
+  excerpt,
+  author,
+  mainImage {
+    asset
+  },
+  slug {
+    current
+  },
+  body,
+  postTags,
+  "categories": categories[]->title
+}`;

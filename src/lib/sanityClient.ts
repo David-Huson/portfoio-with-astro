@@ -10,7 +10,7 @@ const config = {
   projectId: PUBLIC_SANITY_PROJECT_ID || 'j6vs6osg',
   dataset: PUBLIC_SANITY_DATASET || 'production',
   apiVersion: PUBLIC_SANITY_API_VERSION || 'v2021-12-21',
-  useCdn: true,
+  useCdn: false,
 };
 
 export const client = sanityClient(config);
