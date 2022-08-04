@@ -12,6 +12,7 @@ export const AllProjects = `*[_type == "project"] {
 export const AllPosts = `*[_type == 'post'][0...6] {
   _id,
   _createdAt,
+  publishedAt,
   title,
   excerpt,
   author,

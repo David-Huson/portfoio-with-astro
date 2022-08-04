@@ -8,6 +8,7 @@ import { Post } from '../../types/sanity-types.d'
 import { formatBlogPostDate } from '../../utils/helpers'
 import { Code } from 'astro/components'
 import { PortableTextComponentsProvider ,PortableText } from '@portabletext/react'
+import { log } from 'console'
 
 export async function getStaticPaths() {
   const allBlogPosts = await client.fetch(AllPosts)
@@ -20,6 +21,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 
+log(post)
 ---
 
 <BlogPostLayout
@@ -32,7 +34,7 @@ const { post } = Astro.props
         <img width="720" height="420" class="post-main__img" loading="lazy" src={getSanityImageUrl(post.mainImage).url()} />
         )}
         <h1>{post.title}</h1>
-        <span>{formatBlogPostDate(post.publishedAt)}</span>
+        <time>{formatBlogPostDate(post.publishedAt)}</time>
         {post.author && <p>By {post.author.name}</p>}
     
         {post.body.map((block: any) => (
