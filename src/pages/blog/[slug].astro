@@ -32,7 +32,7 @@ const { post } = Astro.props
         <img width="720" height="420" class="post-main__img" loading="lazy" src={getSanityImageUrl(post.mainImage).url()} />
         )}
         <h1>{post.title}</h1>
-        <time>{formatBlogPostDate(post.publishedAt)}</time>
+        <span>{formatBlogPostDate(post.publishedAt)}</span>
         {post.author && <p>By {post.author.name}</p>}
     
         {post.body.map((block: any) => (
