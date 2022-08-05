@@ -22,7 +22,7 @@ const allPosts = await client.fetch(AllPosts);
   title={title}
   description={description}
   permalink={permalink}
-  canonicalURL={Astro.canonicalURL.href}
+  canonicalURL={Astro.url.href}
 >
   <div>
     <Hero />

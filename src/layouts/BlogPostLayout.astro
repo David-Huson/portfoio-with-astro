@@ -30,7 +30,7 @@ const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
       permalink={permalink}
       ogImageUrl={ogImageURL}
       publishDate={publishDate}
-      canonicalURL={Astro.canonicalURL.href}
+      canonicalURL={Astro.url.href}
       articleSchema
     />
     <Navigation client:load />
