@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/sections/header/BaseHead.astro';
-import Navigation from '../components/sections/header/Navigation.astro';
+// import Navigation from '../components/sections/header/Navigation.astro';
 import '../../styles/tailwind.css';
 import '@fontsource/cormorant';
 import '@fontsource/roboto';
@@ -31,7 +31,7 @@ const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
       publishDate={publishDate}
       ogImageUrl={ogImageUrl}
     />
-    <Navigation client:load />
+    <!-- <Navigation client:load /> -->
   </head>
   <body
     class="bg-gradient-to-r dark:bg-gardient-to-r dark:from-dark dark:via-slate-900 dark:to-dark text-dark dark:text-light-txt"
