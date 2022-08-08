@@ -1,6 +1,8 @@
 ---
 import ThemeToggle from './ThemeToggle';
 import SocialIcons from '../../elements/SocialIcons';
+import lightLogo from 'lightLogo.png';
+import darkLogo from 'darkLogo.png';
 
 const nav = [
   { link: '/blog', name: 'Blog' },
@@ -16,8 +18,8 @@ const nav = [
     <div class="flex flex-col w-fit">
       <a href="/">
         <div class="w-56 h-auto">
-          <!-- <img class="dark:flex hidden my-2" src="/lightLogo.png" />
-          <img class="dark:hidden flex my-2" src="/darkLogo.png" /> -->
+          <img class="dark:flex hidden my-2" src={lightLogo} loading="lazy" />
+          <img class="dark:hidden flex my-2" src={darkLogo} loading="lazy" />
         </div>
         <h6 class="text-light-txt/75">SOFTWARE ENGINEER</h6>
       </a>
