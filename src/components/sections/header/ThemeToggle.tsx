@@ -14,7 +14,7 @@ function ThemeToggle() {
       <label htmlFor="checkbox" className="hidden text-yellow-500 dark:block">
         <Sun />
       </label>
-      <label htmlFor="checkbox" className="block text-gray-500 dark:hidden">
+      <label htmlFor="checkbox" className="block text-lavender dark:hidden">
         <Moon />
       </label>
     </div>
