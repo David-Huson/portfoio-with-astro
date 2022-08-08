@@ -15,7 +15,6 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.3.2",
     "@astrojs/react": "^0.4.2",
     "@astrojs/tailwind": "^0.2.4",
     "@commitlint/config-conventional": "^17.0.3",
