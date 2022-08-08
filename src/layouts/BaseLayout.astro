@@ -1,6 +1,9 @@
 ---
 import BaseHead from '../components/sections/header/BaseHead.astro';
 import Navigation from '../components/sections/header/Navigation.astro';
+import '../../styles/tailwind.css';
+import '@fontsource/cormorant';
+import '@fontsource/roboto';
 
 const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
   Astro.props;
@@ -20,9 +23,6 @@ const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
       toggleDarkMode();
       checkbox.addEventListener('click', toggleDarkMode);
     </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
-    </style>
     <BaseHead
       title={title}
       description={description}
