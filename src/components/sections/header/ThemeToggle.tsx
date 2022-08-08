@@ -1,6 +1,5 @@
 import React from 'react';
-import { LightMode } from '@styled-icons/material/LightMode';
-import { DarkMode } from '@styled-icons/material/DarkMode';
+import { Sun, Moon } from 'react-feather';
 
 function ThemeToggle() {
   return (
@@ -13,10 +12,10 @@ function ThemeToggle() {
         defaultChecked
       />
       <label htmlFor="checkbox" className="hidden text-yellow-500 dark:block">
-        <LightMode />
+        <Sun />
       </label>
       <label htmlFor="checkbox" className="block text-gray-500 dark:hidden">
-        <DarkMode />
+        <Moon />
       </label>
     </div>
   );
