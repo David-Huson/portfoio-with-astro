@@ -9,7 +9,7 @@ module.exports = {
         dark: '#090B0D',
         light: {
           txt: '#FAFAFB',
-          bg: 'E7E7E7',
+          bg: '#E7E7E7',
         },
         gray: {
           light: '#637081',
@@ -39,13 +39,15 @@ module.exports = {
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        sm: ['0.667rem', '1'],
+        sm: ['0.618rem', '1'],
         base: ['1rem', '1'],
-        md: ['1.5rem', '1'],
-        lg: ['2.25rem', '1'],
-        xl: ['3.375rem', '1'],
-        '2xl': ['5.063rem', '1'],
-        '3xl': ['7.594rem', '1'],
+        md: ['1.618rem', '1'],
+        lg: ['2.618rem', '1'],
+        xl: ['4.236rem', '1'],
+        '2xl': ['6.854rem', '1'],
+        '3xl': ['11.089rem', '1'],
+        '4xl': ['17.942rem', '1'],
+        '5xl': ['29.03rem', '1'],
       },
       typography: ({ theme }) => {
         return {
@@ -58,9 +60,8 @@ module.exports = {
               '--tw-prose-pre-bg': theme('colors.dark'),
               '--tw-prose-invert-body': theme('colors.light.txt'),
               '--tw-prose-invert-headings': theme('colors.light.txt'),
-              '--tw-prose-invert-links': theme('colors.white'),
-              '--tw-prose-invert-code': theme('colors.white'),
-              '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
+              '--tw-prose-invert-links': theme('colors.light.txt'),
+              '--tw-prose-invert-code': theme('colors.light.txt'),
               h1: {
                 fontFamily: [theme('fontFamily.heading')],
                 fontSize: theme('fontSize.3xl'),
@@ -104,6 +105,11 @@ module.exports = {
                 marginBlockStart: 0,
               },
               a: {
+                fontFamily: [theme('fontFamily.body')],
+                fontSize: theme('fontSize.base'),
+                textDecoration: 'none',
+              },
+              button: {
                 fontFamily: [theme('fontFamily.body')],
                 fontSize: theme('fontSize.base'),
                 textDecoration: 'none',

@@ -27,16 +27,12 @@ const allPosts = await client.fetch(AllPosts);
   <div>
     <Hero />
     <Projects>
-      {allProjects.map((project: Project) => (
-        <ProjectCard client:load project={project} />
-      ))}
-      {allProjects.map((project: Project) => (
-        <ProjectCard client:load project={project} />
-      ))}
+      {allProjects.map((project: Project) => <ProjectCard project={project} />)}
+      {allProjects.map((project: Project) => <ProjectCard project={project} />)}
     </Projects>
     <BlogSection>
-      {allPosts.map((post: Post) => <BlogPreview client:load post={post} />)}
-      {allPosts.map((post: Post) => <BlogPreview client:load post={post} />)}
+      {allPosts.map((post: Post) => <BlogPreview post={post} />)}
+      {allPosts.map((post: Post) => <BlogPreview post={post} />)}
     </BlogSection>
   </div>
   <Footer />

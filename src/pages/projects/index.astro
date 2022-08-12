@@ -4,15 +4,19 @@ import Footer from '../../components/elements/Footer.astro';
 import Wrapper from '../../layouts/Wrapper.astro';
 import { client } from '../../lib/sanityClient';
 import { AllProjects } from '../../lib/api';
-import { Project } from '../../types/sanity-types.d';
+import type { Project } from '../../types/sanity-types.d';
 import ProjectCard from '../../components/sections/projects/ProjectCard.astro';
-import Projects from '../../components/sections/projects/Projects.astro';
+import LeftFeaturedCard from '../../components/sections/projects/LeftFeaturedCard';
+import RightFeaturedCard from '../../components/sections/projects/RightFeaturedCard';
 
 const title = 'David Huson | Projects';
 const description = 'My Projects';
 const permalink = 'https://davidhuson.dev/projects';
 
-const allProjects = await client.fetch(AllProjects);
+const allProjects: [Project] = await client.fetch(AllProjects);
+
+const featuredProjects = allProjects.slice(0, 3);
+const projects = allProjects.slice(2);
 ---
 
 <BaseLayout
@@ -23,17 +27,44 @@ const allProjects = await client.fetch(AllProjects);
 >
   <Wrapper>
     <div class="min-h-screen">
-      <Projects>
-        {allProjects.map((project: Project) => (
-          <ProjectCard project={project} />
-        ))}
-        {allProjects.map((project: Project) => (
-          <ProjectCard project={project} />
-        ))}
-        {allProjects.map((project: Project) => (
-          <ProjectCard project={project} />
-        ))}
-      </Projects>
+      <div class="type dark:type-invert">
+        <h1 class="opacity-10 text-4xl font-extrabold absolute top-24">
+          Projects
+        </h1>
+      </div>
+      <div class="mt-36">
+        <LeftFeaturedCard project={featuredProjects[0]} />
+        <RightFeaturedCard project={featuredProjects[1]} />
+        <LeftFeaturedCard project={featuredProjects[2]} />
+      </div>
+
+      <div class="relative w-full">
+        <h2
+          class="text-2xl dark:text-light-txt text-dark font-heading font-bold"
+        >
+          Recent Projects
+        </h2>
+        <div
+          class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle"
+        >
+          {projects.map((project: Project) => (
+            <ProjectCard project={project} />
+          ))}
+          {projects.map((project: Project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      </div>
+      <div>
+        <h2
+          class="text-2xl dark:text-light-txt text-dark font-heading font-bold"
+        >
+          Working on
+        </h2>
+        <div class="my-2">
+          <LeftFeaturedCard project={featuredProjects[0]} />
+        </div>
+      </div>
     </div>
   </Wrapper>
   <Footer />
