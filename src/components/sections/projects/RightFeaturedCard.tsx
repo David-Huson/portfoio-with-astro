@@ -49,6 +49,7 @@ function LeftFeaturedCard(props: Props) {
         src={getSanityImageUrl(props.project.mainImage).url()}
         width="45%"
         className="not-type relative z-0 rounded-sm py-6 opacity-80"
+        loading="lazy"
       />
     </div>
   );
