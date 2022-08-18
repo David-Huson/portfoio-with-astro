@@ -1,0 +1,26 @@
+---
+import Wrapper from '../../../layouts/Wrapper.astro';
+// import { VscArrowRight } from 'react-icons/vsc';
+import { ArrowRight } from 'react-feather';
+---
+
+<Wrapper>
+  <div class="relative">
+    <div class="type dark:type-invert">
+      <h3>Projects</h3>
+    </div>
+    <div class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle">
+      <slot />
+    </div>
+    <div class="absolute right-0">
+      <a
+        href="/projects"
+        target="_self"
+        class="inline-flex items-center space-x-2"
+      >
+        <span>See More</span>
+        <ArrowRight className="inline-block" />
+      </a>
+    </div>
+  </div>
+</Wrapper>

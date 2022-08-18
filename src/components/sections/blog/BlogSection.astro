@@ -1,0 +1,27 @@
+---
+// import { VscArrowRight } from 'react-icons/vsc';
+import { ArrowRight } from 'react-feather';
+import Wrapper from '../../../layouts/Wrapper.astro';
+---
+
+<Wrapper>
+  <div class="relative mt-9">
+    <div class="type dark:type-invert">
+      <h3 class="">Recent Posts</h3>
+    </div>
+    <div class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle">
+      <slot />
+    </div>
+    <div class="absolute right-0">
+      <a
+        href={`/blog`}
+        target="_self"
+        class="inline-flex items-center space-x-2"
+      >
+        <span>See More</span>
+        <ArrowRight className="inline-block" />
+        <!-- <VscArrowRight className="inline-block" /> -->
+      </a>
+    </div>
+  </div>
+</Wrapper>

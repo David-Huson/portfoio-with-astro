@@ -1,0 +1,34 @@
+---
+import { client } from '../../lib/sanityClient';
+import { AllPosts } from '../../lib/api';
+import Wrapper from '../../layouts/Wrapper.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogSection from '../../components/sections/blog/BlogSection.astro';
+import { Post } from '../../types/sanity-types.d';
+import BlogPreview from '../../components/sections/blog/BlogPreview.astro';
+import Footer from '../../components/elements/Footer.astro';
+
+const title = 'David Huson | Blog';
+const description = 'My Blog';
+const permalink = 'https://davidhuson.dev/blog';
+
+const allPostData = await client.fetch(AllPosts);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  canonicalURL={Astro.url.href}
+>
+  <Wrapper>
+    <div>
+      <BlogSection>
+        {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+        <!-- {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+        {allPostData.map((post: Post) => <BlogPreview post={post} />)} -->
+      </BlogSection>
+    </div>
+  </Wrapper>
+  <Footer />
+</BaseLayout>

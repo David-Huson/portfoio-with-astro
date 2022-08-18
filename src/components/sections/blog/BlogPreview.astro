@@ -1,0 +1,52 @@
+---
+// import { VscArrowRight } from 'react-icons/vsc';
+import { ArrowRight } from 'react-feather';
+import type { Post } from '../../../types/sanity-types.d';
+import { getSanityImageUrl } from '../../../utils/helpers';
+const { mainImage, title, excerpt, categories, slug }: Post = Astro.props.post;
+---
+
+<div
+  class="flex flex-col max-w-sm h-auto mx-3 shadow-lg border border-light-txt/30 backdrop-blur-xl rounded transition ease-in-out hover:-translate-y-1 hover:scale-100"
+>
+  <img
+    class="object-cover h-48 w-96 rounded-t"
+    src={getSanityImageUrl(mainImage).url()}
+    loading="lazy"
+  />
+  <div
+    class="type dark:type-invert w-full h-full flex flex-col bg-gradient-to-br from-dark/80 to-dark/10 backdrop-blur-xl rounded-b"
+  >
+    <h3 class="pl-2 text-lg my-3">{title}</h3>
+    <p class="pl-3 h-full mb-3">
+      {excerpt}
+    </p>
+    <div class="w-2/3 ml-2">
+      <div class="flex flex-row flex-wrap space-x-4 justify-start">
+        {categories &&
+          categories.map((category) => (
+            <span class="font-normal mb-2 text-magenta">{category}</span>
+          ))}
+      </div>
+    </div>
+    <!-- <div class="w-2/3 ml-2">
+      <div class="flex flex-row flex-wrap space-x-4 justify-start">
+        {postTags &&
+          postTags.map((tag) => (
+            <span class="font-normal mb-2 text-orange">{tag.label}</span>
+          ))}
+      </div>
+    </div> -->
+    <div class="absolute bottom-2 right-2">
+      <a
+        href={`/blog/${slug.current}`}
+        target="_self"
+        class="inline-flex items-center space-x-2"
+      >
+        <span>See More</span>
+        <ArrowRight className="inline-flex" />
+        <!-- <VscArrowRight className="inline-block" /> -->
+      </a>
+    </div>
+  </div>
+</div>

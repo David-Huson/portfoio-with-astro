@@ -1,0 +1,43 @@
+---
+import BaseHead from '../components/sections/header/BaseHead.astro';
+import Navigation from '../components/sections/header/Navigation.astro';
+import '../../styles/tailwind.css';
+import '@fontsource/cormorant';
+import '@fontsource/roboto';
+
+const { title, description, permalink, publishDate, ogImageUrl, canonicalURL } =
+  Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <script>
+      const checkbox: HTMLInputElement = document.querySelector('#checkbox');
+      const html = document.querySelector('html');
+      const toggleDarkMode = () => {
+        checkbox!.checked
+          ? html.classList.add('dark')
+          : html.classList.remove('dark');
+      }; // calling the function directly
+      toggleDarkMode();
+      checkbox.addEventListener('click', toggleDarkMode);
+    </script>
+    <BaseHead
+      title={title}
+      description={description}
+      permalink={permalink}
+      canonicalURL={canonicalURL}
+      publishDate={publishDate}
+      ogImageUrl={ogImageUrl}
+    />
+    <Navigation />
+  </head>
+  <body
+    class="bg-gradient-to-r dark:bg-gardient-to-r dark:from-dark dark:via-slate-900 dark:to-dark text-dark dark:text-light-txt"
+  >
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

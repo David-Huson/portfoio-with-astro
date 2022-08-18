@@ -1,24 +1,39 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
+import { AllProjects, AllPosts } from '../lib/api';
+import ProjectCard from '../components/sections/projects/ProjectCard.astro';
+import Hero from '../components/elements/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Projects from '../components/sections/projects/Projects.astro';
+import { client } from '../lib/sanityClient';
+import type { Project, Post } from '../types/sanity-types.d';
+import BlogSection from '../components/sections/blog/BlogSection.astro';
+import BlogPreview from '../components/sections/blog/BlogPreview.astro';
+import Footer from '../components/elements/Footer.astro';
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const title = 'David Huson | Software Engineer';
+const description = 'This is my first Portfolio site!';
+const permalink = 'https://davidhuson.dev/';
+
+const allProjects = await client.fetch(AllProjects);
+const allPosts = await client.fetch(AllPosts);
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <title>Astro + TailwindCSS</title>
-  </head>
-
-  <body>
-    <div class='grid place-items-center h-screen content-center'>
-      <Button>Tailwind Button in Astro!</Button>
-      <a href='/markdown-page' class='p-4 underline'
-        >Markdown is also supported...
-      </a>
-    </div>
-  </body>
-</html>
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  canonicalURL={Astro.url.href}
+>
+  <div>
+    <Hero />
+    <Projects>
+      {allProjects.map((project: Project) => <ProjectCard project={project} />)}
+      {allProjects.map((project: Project) => <ProjectCard project={project} />)}
+    </Projects>
+    <BlogSection>
+      {allPosts.map((post: Post) => <BlogPreview post={post} />)}
+      {allPosts.map((post: Post) => <BlogPreview post={post} />)}
+    </BlogSection>
+  </div>
+  <Footer />
+</BaseLayout>
