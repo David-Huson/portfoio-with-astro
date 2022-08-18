@@ -8,7 +8,7 @@ import { Post } from '../../types/sanity-types.d'
 import { formatBlogPostDate } from '../../utils/helpers'
 import { Code } from 'astro/components'
 
-const toMarkdown = require('@sanity/block-content-to-markdown');
+// const toMarkdown = require('@sanity/block-content-to-markdown');
 
 // import { PortableTextComponentsProvider ,PortableText } from '@portabletext/react'
 
@@ -42,8 +42,9 @@ const { post } = Astro.props
           ?
           <Code code={block.code} lang={block.language} theme={'github-dark-primary'} />
           :
+          block
           // <PortableText value={block} />
-          toMarkdown(block)
+          // toMarkdown(block)
           ))}
       </article>
   </Wrapper>
