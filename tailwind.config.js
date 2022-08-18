@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: '#090B0D',
+        dark: {
+          primary: '#090B0D',
+          glass: '#1B1D1F',
+        },
         light: {
           txt: '#FAFAFB',
           bg: '#E7E7E7',
@@ -21,7 +24,8 @@ module.exports = {
           bright: '#FFBF00',
         },
         blue: {
-          light: '2AB3FA',
+          light: '#2AB3FA',
+          md: '#29339B',
           dark: '#0D3B66',
           900: '#101218',
         },
@@ -30,6 +34,7 @@ module.exports = {
         sage: '#5C6F68',
         lavender: '#CBC5EA',
         green: '#3BC14A',
+        pine: '#14453D',
         magenta: '#ff3366',
         purple: '#6665DD',
       },
@@ -48,6 +53,13 @@ module.exports = {
         '3xl': ['11.089rem', '1'],
         '4xl': ['17.942rem', '1'],
         '5xl': ['29.03rem', '1'],
+      },
+      opacity: {
+        5: '.05',
+        15: '.15',
+      },
+      dropShadow: {
+        lg: '4px 4px 4px rgba(9, 11, 13, 0.25)',
       },
       typography: ({ theme }) => {
         return {
