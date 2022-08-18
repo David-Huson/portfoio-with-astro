@@ -7,10 +7,7 @@ import { getSanityImageUrl } from '../../utils/helpers'
 import { Post } from '../../types/sanity-types.d'
 import { formatBlogPostDate } from '../../utils/helpers'
 import { Code } from 'astro/components'
-
-// const toMarkdown = require('@sanity/block-content-to-markdown');
-
-// import { PortableTextComponentsProvider ,PortableText } from '@portabletext/react'
+import { PortableTextComponentsProvider ,PortableText } from '@portabletext/react'
 
 export async function getStaticPaths() {
   const allBlogPosts = await client.fetch(AllPosts)
@@ -42,8 +39,7 @@ const { post } = Astro.props
           ?
           <Code code={block.code} lang={block.language} theme={'github-dark'} />
           :
-          block
-          // <PortableText value={block} />
+          <PortableText value={block} />
           // toMarkdown(block)
           ))}
       </article>
