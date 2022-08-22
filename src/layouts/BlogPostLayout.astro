@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/sections/header/BaseHead.astro';
-import Navigation from '../components/sections/header/Navigation.astro';
+import Navigation from '../components/sections/header/Navigation';
 
 const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
 ---
@@ -9,18 +9,14 @@ const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
 <html lang="en" class="dark">
   <head>
     <script>
-      const checkbox = document.querySelector('#checkbox');
+      const checkbox: HTMLInputElement = document.querySelector('#checkbox');
       const html = document.querySelector('html');
 
       const toggleDarkMode = () => {
-        // eslint-disable-next-line no-unused-expressions
-        checkbox.checked
+        checkbox!.checked
           ? html.classList.add('dark')
           : html.classList.remove('dark');
-      };
-
-      // calling the function directly
-
+      }; // calling the function directly
       toggleDarkMode();
       checkbox.addEventListener('click', toggleDarkMode);
     </script>
@@ -33,9 +29,11 @@ const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
       canonicalURL={Astro.url.href}
       articleSchema
     />
-    <Navigation client:load />
   </head>
-  <body class="bg-slate-100 dark:bg-dark text-slate-900 dark:text-slate-50">
+  <body
+    class="bg-slate-100 dark:bg-dark-primary text-slate-900 dark:text-slate-50"
+  >
+    <Navigation client:visible />
     <main>
       <slot />
     </main>

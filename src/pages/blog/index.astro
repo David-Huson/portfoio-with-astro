@@ -1,9 +1,7 @@
 ---
 import { client } from '../../lib/sanityClient';
 import { AllPosts } from '../../lib/api';
-import Wrapper from '../../layouts/Wrapper.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogSection from '../../components/sections/blog/BlogSection.astro';
 import { Post } from '../../types/sanity-types.d';
 import BlogPreview from '../../components/sections/blog/BlogPreview.astro';
 import Footer from '../../components/elements/Footer.astro';
@@ -21,14 +19,17 @@ const allPostData = await client.fetch(AllPosts);
   permalink={permalink}
   canonicalURL={Astro.url.href}
 >
-  <Wrapper>
-    <div>
-      <BlogSection>
-        {allPostData.map((post: Post) => <BlogPreview post={post} />)}
-        <!-- {allPostData.map((post: Post) => <BlogPreview post={post} />)}
-        {allPostData.map((post: Post) => <BlogPreview post={post} />)} -->
-      </BlogSection>
+  <div class="relative">
+    <div class="type dark:type-invert absolute left-5 z-0">
+      <h1 class="lg:text-5xl md:text-4xl opacity-15">Blog</h1>
     </div>
-  </Wrapper>
+    <div
+      class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle mt-64"
+    >
+      {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+    </div>
+    <!-- {allPostData.map((post: Post) => <BlogPreview post={post} />)}
+        {allPostData.map((post: Post) => <BlogPreview post={post} />)} -->
+  </div>
   <Footer />
 </BaseLayout>

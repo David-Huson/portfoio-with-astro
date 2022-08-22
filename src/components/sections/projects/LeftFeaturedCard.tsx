@@ -1,9 +1,14 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import type { FunctionComponent } from 'react';
 import React from 'react';
 import type { Project } from '../../../types/sanity-types.d';
 import { getSanityImageUrl } from '../../../utils/helpers';
 
-function LeftFeaturedCard(props: Props) {
+interface LeftFeaturedCardProps {
+  project: Project;
+}
+
+const LeftFeaturedCard: FunctionComponent<LeftFeaturedCardProps> = (props) => {
   return (
     <div className="inline-flex w-full justify-center align-middle">
       <img
@@ -18,8 +23,8 @@ function LeftFeaturedCard(props: Props) {
             {props.project.title}
           </h3>
         </div>
-        <div className="relative z-0 h-48 w-full rounded-md border border-light-bg/30 bg-gradient-to-br from-light-bg/80 to-transparent p-4 backdrop-blur-lg dark:from-dark/80">
-          <h6 className="m-1 text-right font-normal text-green">
+        <div className="relative z-0 h-48 w-full rounded-md border border-light-bg/30 bg-gradient-to-br from-light-bg/80 to-transparent p-4 backdrop-blur-lg dark:from-dark-primary/80">
+          <h6 className="m-1 text-right font-medium text-blue-md dark:text-green">
             Featured project
           </h6>
           <p>
@@ -32,7 +37,7 @@ function LeftFeaturedCard(props: Props) {
           {props.project.projectTags.map((tag) => (
             <span
               key={props.project._id + tag.value}
-              className="relative z-50 mb-2 font-normal text-orange"
+              className="relative z-50 mb-2 font-normal text-pine dark:text-orange"
             >
               {tag.label}
             </span>
@@ -41,24 +46,20 @@ function LeftFeaturedCard(props: Props) {
           {props.project.projectTags.map((tag) => (
             <span
               key={props.project._id + tag.value}
-              className="relative z-50 mb-2 font-normal text-orange"
+              className="relative z-50 mb-2 font-normal text-pine dark:text-orange"
             >
               {tag.label}
             </span>
           ))}
         </div>
         <div className="flex justify-end">
-          <button className="type type-invert rounded-md bg-blue-dark px-3 py-2 font-normal dark:bg-lavender dark:text-dark">
+          <button className="bg-blue-dark-primary type type-invert rounded-md bg-blue-dark px-3 py-2 font-normal dark:bg-lavender dark:text-dark-primary">
             Learn More
           </button>
         </div>
       </div>
     </div>
   );
-}
-
-interface Props {
-  project: Project;
-}
+};
 
 export default LeftFeaturedCard;

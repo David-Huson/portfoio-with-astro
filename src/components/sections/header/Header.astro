@@ -1,0 +1,20 @@
+---
+import Navigation from './Navigation';
+import SocialIcons from './SocialIcons';
+import ResumeButton from './ResumeButton';
+import ThemeToggle from './ThemeToggle';
+import MobileMenuToggle from './MenuToggle';
+---
+
+<Navigation>
+  <div
+    class="hidden space-x-4 font-body text-light-txt dark:text-dark-primary md:flex"
+  >
+    <SocialIcons />
+    <ResumeButton />
+    <ThemeToggle client:visible />
+  </div>
+  <div class="absolute right-0 top-1 text-lg md:hidden">
+    <MobileMenuToggle client:visible />
+  </div>
+</Navigation>

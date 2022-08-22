@@ -31,6 +31,12 @@ export const site = {
   },
 };
 
+export const nav = [
+  { link: '/blog', name: 'Blog' },
+  { link: '/projects', name: 'Projects' },
+  { link: '/about', name: 'About me' },
+];
+
 export interface ArticleSchemaTypes {
   title: string;
   permalink: URL;
