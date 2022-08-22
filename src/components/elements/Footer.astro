@@ -3,16 +3,22 @@ import SocialIcons from '../sections/header/SocialIcons';
 ---
 
 <footer
-  class="w-full flex align-middle justify-center mt-20 bg-gradient-to-t from-light-bg dark:from-dark to-transparent"
+  class="w-full flex align-middle justify-center mt-20 bg-gradient-to-t from-light-bg dark:from-dark-primary to-transparent"
 >
-  <div class="relative max-h-min py-10">
+  <div class="relative max-h-min my-4">
     <div class="relative bottom-0">
       <div class="flex justify-center mb-5">
         <SocialIcons />
       </div>
-      <div class="type dark:type-invert text-center -mb-5">
+      <div class="type dark:type-invert text-center">
         Copyright 2022 © <a class="text-orange" href="/">David Huson</a>
       </div>
+    </div>
+    <div class="relative">
+      <button
+        class="bottom-0 -right-32 rounded-md py-2 px-5 bg-yellow-dull hover:-translate-y-1 ease-in-out duration-500 hover:scale-125 md:absolute sm:hidden"
+        >Hire Me
+      </button>
     </div>
   </div>
 </footer>
