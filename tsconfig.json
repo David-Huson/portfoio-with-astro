@@ -10,7 +10,7 @@
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Add type definitions for our Astro runtime.
-    "types": ["vite/client", "node", "astro/client"],
+    "types": ["node", "astro/client"],
     "jsx": "react",
     "allowSyntheticDefaultImports": true
 
