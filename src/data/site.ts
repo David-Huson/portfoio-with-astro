@@ -33,8 +33,8 @@ export const site = {
 
 export interface ArticleSchemaTypes {
   title: string;
-  permalink: URL;
-  publishDate: Date;
-  ogImageUrl: URL;
+  permalink: string;
+  publishDate: string;
+  ogImageUrl: string;
   description: string;
 }
