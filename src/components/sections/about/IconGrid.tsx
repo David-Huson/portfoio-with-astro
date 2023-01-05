@@ -1,5 +1,5 @@
 import React from 'react'
-import {SiVisualstudiocode, SiEclipseide, SiToggl, SiTrello, SiJirasoftware, SiGithub} from 'react-icons/si'
+import {SiVisualstudiocode, SiEclipseide, SiToggl, SiTrello, SiJirasoftware, SiGithub} from 'react-icons/si/index.js'
 
 export const IconGrid= () => {
   return (
