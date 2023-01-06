@@ -34,6 +34,11 @@ const allPosts = await client.fetch(AllPosts);
       {allPosts.map((post: Post) => <BlogPreview post={post} />)}
       {allPosts.map((post: Post) => <BlogPreview post={post} />)}
     </BlogSection>
+    <div
+      class="rounded-md bg-blue-dark dark:bg-lavender px-3 py-2 type type-invert dark:text-dark  fixed bottom-10 right-10 motion-safe:animate-pulse"
+    >
+    <span>Download my Resume!</span>
+  </div>
   </div>
   <Footer />
 </BaseLayout>
