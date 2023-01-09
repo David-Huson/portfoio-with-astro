@@ -7,17 +7,17 @@ const { mainImage, title, excerpt, categories, slug, postTags}: Post = Astro.pro
 ---
 
 <article
-  class="w-full max-w-full lg:w-96 lg:h-48 flex space-x-2 lg:space-x-0 lg:flex-col"
+  class="w-full max-w-full h-48 lg:w-96 lg:h-full flex space-x-2 lg:space-x-0 lg:flex-col lg:justify-between hover:-translate-y-1 hover:scale-100 hover:bg-slate-100/90 dark:hover:bg-dark/80 transition ease-in-out cursor-pointer"
 >
   <img
-    class="object-cover w-1/4 lg:h-48 lg:w-96 lg:rounded-t"
+    class="object-cover w-1/4 h-auto lg:h-48 lg:w-96 lg:rounded-t"
     src={getSanityImageUrl(mainImage).url()}
     loading="lazy"
   />
   <div
-    class="pl-2 w-full max-w-full lg:w-96 lg:h-48 flex flex-col bg-gradient-to-br from-light-bg/80 dark:from-dark/80 to-light-bg/10 dark:to-dark/10 backdrop-blur-xl border-b-[1px] lg:border border-light-bg/30 lg:rounded transition ease-in-out cursor-pointer hover:-translate-y-1 hover:scale-100 hover:bg-slate-100/90 dark:hover:bg-dark/80"
+    class="pl-2 w-full max-w-full md:w-96 h-48 flex flex-col bg-gradient-to-br from-light-bg/80 dark:from-dark/80 to-light-bg/10 dark:to-dark/10 backdrop-blur-xl border-b-[1px] lg:border-x-[1px] border-light-bg/30 lg:rounded-b"
   >
-    <div class="flex flex-row flex-wrap space-x-4 justify-end">
+    <div class="flex flex-row flex-wrap space-x-4 justify-end lg:hidden">
       {categories &&
         categories.map((category) => (
           <span class="font-normal text-magenta dark:text-green/75">{category}</span>
@@ -28,24 +28,28 @@ const { mainImage, title, excerpt, categories, slug, postTags}: Post = Astro.pro
       {excerpt}
     </p>
     
-    <div class="pl-2 w-full">
-      <div class="flex flex-row flex-wrap space-x-4 justify-start">
+    <div class="pl-2 w-full flex align baseline">
+      <div class="flex flex-row space-x-4 justify-start w-fit ">
         {postTags &&
           postTags.map((tag) => (
             <span class="font-normal mb-2 text-purple dark:text-orange">{tag.label}</span>
           ))}
       </div>
-      
+      <a
+        href={`/blog/${slug.current}`}
+        target="_self"
+        class="h-full lg:block lg:p-2 w-fit"
+        >
+        <div class="hidden lg:block items-right space-x-2">
+          <SeeMoreLink />
+      </div>
+    </a>
     </div>
     <a
-    href={`/blog/${slug.current}`}
-    target="_self"
-    class="w-full h-full absolute lg:relative lg:p-2"
-    >
-      <div class="hidden lg:block items-center absolute bottom-0 right-0 p-2 space-x-2">
-        <span>See More</span>
-        <SeeMoreLink />
-      </div>
+      href={`/blog/${slug.current}`}
+      target="_self"
+      class="h-full w-full relative top-0 right-0 lg:hidden block"
+      >
     </a>
   </div>
 </article>

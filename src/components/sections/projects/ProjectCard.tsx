@@ -14,8 +14,8 @@ function ProjectCard<Component>(props: Props) {
         <p className="pl-2 h-full">
           {project.description}
         </p>
-        <div className="pl-2 w-full h-full">
-          <div className="flex flex-row flex-wrap space-x-4 justify-start">
+        <div className="pl-2 w-fit h-full">
+          <div className="flex flex-wrap space-x-4 justify-start">
             {project.projectTags &&
               project.projectTags.map((tag) => (
                 <span className="font-normal mb-2 text-orange">{tag.label}</span>
@@ -27,10 +27,7 @@ function ProjectCard<Component>(props: Props) {
           target="_self"
           className="w-full h-full absolute lg:relative lg:p-2"
         >
-          <div className="hidden lg:block items-center absolute bottom-0 right-0 p-2 space-x-2">
-            <span>See More</span>
-            <SeeMoreLink className='mt-4' />
-          </div>
+          <SeeMoreLink />
         </a>
       </article>
   )
