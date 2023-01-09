@@ -14,12 +14,13 @@ function Navigation() {
     { link: '/about', name: 'About me' },
   ];
   return (
-    <header className='bg-gradient-to-b from-light-bg dark:from-dark to-transparent py-2'>
-      <div className='flex items-center justify-between xl:max-w-7xl xl:mx-auto max-w-full px-[8%] flex-wrap w-full'>
-        <div className='flex-col justify-start'>
-          <img className="dark:flex hidden" src={lightLogo} width={220} height={55}loading="lazy" />
+    <header className='bg-gradient-to-b from-light-bg dark:from-dark to-transparent py-2 max-w-full w-full'>
+      <div className='flex items-center justify-between lg:max-w-7xl lg:mx-auto max-w-full px-[8%] flex-wrap w-full'>
+        {/* logo */}
+        <div className='flex-col justify-start w-1/2 lg:w-auto'>
+          <img className="dark:flex hidden" src={lightLogo} width={220} height={55} loading="lazy" />
           <img className="dark:hidden flex" src={darkLogo} width={220} height={55} loading="lazy" />
-          <h6 className="text-light-txt/75 font-subheading">SOFTWARE ENGINEER</h6>
+          <h6 className="text-light-txt/75 font-subheading mt-1 text-sm">SOFTWARE ENGINEER</h6>
         </div>
         <div className='lg:hidden flex space-x-4'>
           <FiMenu className='h-6 w-6 cursor-pointer' onClick={() => {setOpen(!open)}}/>
@@ -37,7 +38,7 @@ function Navigation() {
           </ul>
           <SocialIcons className='lg:hidden justify-center my-2'/>
         </nav>
-        <div className=' hidden lg:flex space-x-6'>
+        <div className='hidden lg:flex space-x-6'>
           <SocialIcons />
           <ThemeToggle />
         </div>
