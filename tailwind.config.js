@@ -34,7 +34,7 @@ module.exports = {
         purple: '#6665DD',
       },
       fontFamily: {
-        heading: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        heading: ['Montserrat', 'Roboto', ...defaultTheme.fontFamily.sans],
         subheading: ['Cormorant', ...defaultTheme.fontFamily.serif],
         body: ['Roboto', ...defaultTheme.fontFamily.sans],
       },

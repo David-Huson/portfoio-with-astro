@@ -6,21 +6,18 @@ import Wrapper from '../../../layouts/Wrapper.astro';
 
 <Wrapper>
   <div class="relative mt-9">
-    <div class="type dark:type-invert">
-      <h3 class="">Recent Posts</h3>
-    </div>
-    <div class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle">
+    <h3 class="font-header text-lg font-semibold mt-4 mb-2 ml-1">Recent Posts</h3>
+    <div class="lg:p-6 lg:inline-flex flex-wrap lg:gap-6 justify-center align-middle ">
       <slot />
     </div>
-    <div class="absolute right-0">
+    <div class="text-center my lg:absolute lg:right-0 mt-2">
       <a
-        href={`/blog`}
+        href="/projects"
         target="_self"
         class="inline-flex items-center space-x-2"
       >
         <span>See More</span>
         <ArrowRight className="inline-block" />
-        <!-- <VscArrowRight className="inline-block" /> -->
       </a>
     </div>
   </div>

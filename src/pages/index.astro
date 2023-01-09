@@ -1,6 +1,6 @@
 ---
 import { AllProjects, AllPosts } from '../lib/api';
-import ProjectCard from '../components/sections/projects/ProjectCard.astro';
+import ProjectCard from '../components/sections/projects/ProjectCard';
 import Hero from '../components/elements/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Projects from '../components/sections/projects/Projects.astro';
@@ -28,12 +28,15 @@ const allPosts = await client.fetch(AllPosts);
     <Hero />
     <Projects>
       {allProjects.map((project: Project) => <ProjectCard project={project} />)}
-      {allProjects.map((project: Project) => <ProjectCard project={project} />)}
     </Projects>
     <BlogSection>
       {allPosts.map((post: Post) => <BlogPreview post={post} />)}
-      {allPosts.map((post: Post) => <BlogPreview post={post} />)}
     </BlogSection>
+    <div
+      class="rounded-md bg-blue-dark dark:bg-lavender px-3 py-2 type type-invert dark:text-dark  fixed bottom-10 right-10 motion-safe:animate-pulse"
+    >
+    <span>Download my Resume!</span>
+  </div>
   </div>
   <Footer />
 </BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/sections/header/BaseHead.astro';
-import Navigation from '../components/sections/header/Navigation.astro';
+import Navigation from '../components/sections/header/Navigation';
 
 const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
 ---
@@ -9,7 +9,7 @@ const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
 <html lang="en" class="dark">
   <head>
     <script>
-      const checkbox = document.querySelector('#checkbox');
+      const checkbox:HTMLInputElement = document.querySelector('#checkbox');
       const html = document.querySelector('html');
 
       const toggleDarkMode = () => {
@@ -33,7 +33,7 @@ const { title, description, ogImageURL, publishDate, permalink } = Astro.props;
       canonicalURL={Astro.url.href}
       articleSchema
     />
-    <Navigation client:load />
+    <Navigation />
   </head>
   <body class="bg-slate-100 dark:bg-dark text-slate-900 dark:text-slate-50">
     <main>

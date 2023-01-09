@@ -5,9 +5,10 @@ import Wrapper from '../../layouts/Wrapper.astro';
 import { client } from '../../lib/sanityClient';
 import { AllProjects } from '../../lib/api';
 import type { Project } from '../../types/sanity-types.d';
-import ProjectCard from '../../components/sections/projects/ProjectCard.astro';
+import ProjectCard from '../../components/sections/projects/ProjectCard';
 import LeftFeaturedCard from '../../components/sections/projects/LeftFeaturedCard';
 import RightFeaturedCard from '../../components/sections/projects/RightFeaturedCard';
+import Projects from '../../components/sections/projects/Projects.astro';
 
 const title = 'David Huson | Projects';
 const description = 'My Projects';
@@ -26,13 +27,13 @@ const projects = allProjects.slice(2);
   canonicalURL={Astro.url.href}
 >
   <Wrapper>
-    <div class="min-h-screen">
-      <div class="type dark:type-invert">
-        <h1 class="opacity-10 text-4xl font-extrabold absolute top-24">
+    <div class="md:min-h-screen min-h-max">
+      <div class="type dark:type-invert ml-2 md:ml-0 ">
+        <h1 class="opacity-100 md:opacity-10 text-xl lg:text-4xl font-extrabold relative md:absolute md:top-24">
           Projects
         </h1>
       </div>
-      <div class="mt-36">
+      <div class="hidden md:block mt-36">
         <LeftFeaturedCard project={featuredProjects[0]} />
         <RightFeaturedCard project={featuredProjects[1]} />
         <LeftFeaturedCard project={featuredProjects[2]} />
@@ -40,24 +41,19 @@ const projects = allProjects.slice(2);
 
       <div class="relative w-full">
         <h2
-          class="text-2xl dark:text-light-txt text-dark font-heading font-bold"
+          class="hidden md:block text-2xl dark:text-light-txt text-dark font-heading font-bold"
         >
           Recent Projects
         </h2>
         <div
-          class="p-6 inline-flex flex-wrap gap-6 justify-center align-middle"
+          class="md:p-6 inline-flex flex-wrap md:gap-6 justify-center align-middle"
         >
-          {projects.map((project: Project) => (
-            <ProjectCard project={project} />
-          ))}
-          {projects.map((project: Project) => (
-            <ProjectCard project={project} />
-          ))}
+          {projects.map((project: Project) => <ProjectCard project={project} />)}
         </div>
       </div>
-      <div>
+      <div class="hidden md:block">
         <h2
-          class="text-2xl dark:text-light-txt text-dark font-heading font-bold"
+          class="text-lg lg:text-2xl dark:text-light-txt text-dark font-heading font-bold"
         >
           Working on
         </h2>
@@ -66,6 +62,6 @@ const projects = allProjects.slice(2);
         </div>
       </div>
     </div>
+    <Footer />
   </Wrapper>
-  <Footer />
 </BaseLayout>
