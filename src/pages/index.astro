@@ -9,6 +9,7 @@ import type { Project, Post } from '../types/sanity-types.d';
 import BlogSection from '../components/sections/blog/BlogSection.astro';
 import BlogPreview from '../components/sections/blog/BlogPreview.astro';
 import Footer from '../components/elements/Footer.astro';
+import resume from '/Resume.pdf'
 
 const title = 'David Huson | Software Engineer';
 const description = 'This is my first Portfolio site!';
@@ -32,11 +33,13 @@ const allPosts = await client.fetch(AllPosts);
     <BlogSection>
       {allPosts.map((post: Post) => <BlogPreview post={post} />)}
     </BlogSection>
-    <div
+    <a href={resume} target="_blank">
+      <div
       class="rounded-md bg-blue-dark dark:bg-lavender px-3 py-2 type type-invert dark:text-dark  fixed bottom-10 right-10 motion-safe:animate-pulse"
-    >
-    <span>Download my Resume!</span>
-  </div>
+      >
+      <span>Download my Resume!</span>
+    </div>
+  </a>
   </div>
   <Footer />
 </BaseLayout>
