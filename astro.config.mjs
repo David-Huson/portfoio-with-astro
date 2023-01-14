@@ -6,8 +6,11 @@ import react from '@astrojs/react';
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
+import prefetch from "@astrojs/prefetch";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), partytown()],
+  integrations: [tailwind({config: {applyBaseStyles: true}}), react(), partytown(), prefetch()],
   vite: {
     ssr: {
       noExternal: ['@fontsource/cormorant', '@fontsource/roboto']

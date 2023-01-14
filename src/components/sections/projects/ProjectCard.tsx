@@ -18,7 +18,7 @@ function ProjectCard<Component>(props: Props) {
           <div className="flex flex-wrap space-x-4 justify-start">
             {project.projectTags &&
               project.projectTags.map((tag) => (
-                <span className="font-normal mb-2 text-orange">{tag.label}</span>
+                <span key={project._id} className="font-normal mb-2 text-orange">{tag.label}</span>
               ))}
           </div>
         </div>

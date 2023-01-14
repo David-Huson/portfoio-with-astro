@@ -1,7 +1,9 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  content: ['./public/**/*.html', './src/**/*.{astro,html,js,jsx,md,ts,tsx}'],
+  content: [ './src/pages/index.{html, astro, js, jsx, tsx}', './src/**/*.{astro,html,js,jsx,ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -34,9 +36,9 @@ module.exports = {
         purple: '#6665DD',
       },
       fontFamily: {
-        heading: ['Montserrat', 'Roboto', ...defaultTheme.fontFamily.sans],
-        subheading: ['Cormorant', ...defaultTheme.fontFamily.serif],
-        body: ['Roboto', ...defaultTheme.fontFamily.sans],
+        heading: ['Montserrat', 'Roboto'],
+        subheading: ['Cormorant'],
+        body: ['Roboto'],
       },
       fontSize: {
         sm: ['0.618rem', '1'],

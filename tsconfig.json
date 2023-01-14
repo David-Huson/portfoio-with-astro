@@ -23,5 +23,6 @@
     // "skipLibCheck": true,
     // "forceConsistentCasingInFileNames": true,
   },
+  "extends": "astro/tsconfigs/base",
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "env.d.ts"]
 }
