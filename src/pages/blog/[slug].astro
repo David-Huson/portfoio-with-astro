@@ -15,7 +15,7 @@ import { useState } from 'react'
 export async function getStaticPaths() {
   const allPosts = await client.fetch(AllPosts)
   
-  return await allPosts.map((postRet: Post) => ({
+  return await allPosts?.map((postRet: Post) => ({
     params: { slug: postRet.slug.current },
     props: { postRet },
   }))
