@@ -25,6 +25,7 @@ const post:Post = Astro.props.Post;
 
 ---
 
+{post && 
 <BlogPostLayout
   title={post.title}
   ogImageUrl={getSanityImageUrl(post.mainImage).width(1200).url()}
@@ -48,3 +49,4 @@ const post:Post = Astro.props.Post;
       </article>
   </Wrapper>
 </BlogPostLayout>
+}
