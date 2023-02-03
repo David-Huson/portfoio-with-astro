@@ -13,15 +13,14 @@ import { useState } from 'react'
 
 
 export async function getStaticPaths() {
-  const params = { slug: post.slug.current } 
-  const singlePost = await client.fetch(SinglePost, params)
+  const allPosts = await client.fetch(AllPosts)
   
-  return await singlePost.map((post: Post) => ({
-    params: { slug: post.slug.current },
-    props: { post },
+  return await allPosts.map((postRet: Post) => ({
+    params: { slug: postRet.slug.current },
+    props: { postRet },
   }))
 }
-const post:Post = Astro.props.Post;
+const post:Post = Astro.props.postRet;
 
 
 ---
