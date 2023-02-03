@@ -23,6 +23,7 @@ export interface Post {
   body: [object];
   postTags: [Tag];
   categories: [category: string];
+  publishedAt: string;
 }
 
 export interface Project {

@@ -26,3 +26,22 @@ export const AllPosts = `*[_type == 'post'][0...6] {
   postTags,
   "categories": categories[]->title
 }`;
+
+
+export const SinglePost = `*[_type == 'post' && title == $title][0...6] {
+  _id,
+  _createdAt,
+  publishedAt,
+  title,
+  excerpt,
+  author,
+  mainImage {
+    asset
+  },
+  slug {
+    current
+  },
+  body,
+  postTags,
+  "categories": categories[]->title
+}`;
