@@ -11,8 +11,7 @@ import { PortableTextComponentsProvider ,PortableText } from '@portabletext/reac
 
 
 export async function getStaticPaths() {
-  const params = {slug: post.slug.current }
-  const allBlogPosts = await client.fetch(SinglePost, params)
+  const allBlogPosts = await client.fetch(AllPosts)
   
   return await allBlogPosts.map((post: Post) => ({
     params: { slug: post.slug.current },
