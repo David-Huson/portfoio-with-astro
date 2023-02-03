@@ -13,7 +13,7 @@ import { useState } from 'react'
 
 
 export async function getStaticPaths() {
-  const allBlogPosts = await client.fetch(AllPosts).then()
+  const allBlogPosts = await client.fetch(AllPosts)
   
   return await allBlogPosts.map((post: Post) => ({
     params: { slug: post.slug.current },
