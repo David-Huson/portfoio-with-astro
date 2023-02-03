@@ -33,11 +33,13 @@ const projects = allProjects.slice(2);
           Projects
         </h1>
       </div>
-      <div class="hidden md:block mt-36">
+      {projects.length >= 3 && 
+        <div class="hidden md:block mt-36">
         <LeftFeaturedCard project={featuredProjects[0]} />
         <RightFeaturedCard project={featuredProjects[1]} />
         <LeftFeaturedCard project={featuredProjects[2]} />
-      </div>
+        </div>
+      }
 
       <div class="relative w-full">
         <h2
