@@ -9,7 +9,7 @@ export const AllProjects = `*[_type == "project"] {
   }
 }`;
 
-export const AllPosts = `*[_type == 'post'][0...6] {
+export const AllPosts = `*[_type == 'post']{
   _id,
   _createdAt,
   publishedAt,
@@ -27,21 +27,8 @@ export const AllPosts = `*[_type == 'post'][0...6] {
   "categories": categories[]->title
 }`;
 
-
-export const SinglePost = `*[_type == 'post' && slug.current == $slug][0...6] {
-  _id,
-  _createdAt,
-  publishedAt,
-  title,
-  excerpt,
-  author,
-  mainImage {
-    asset
-  },
+export const AllPostsSlugs = `*[_type == 'post'] {
   slug {
     current
   },
-  body,
-  postTags,
-  "categories": categories[]->title
 }`;
