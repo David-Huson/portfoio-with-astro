@@ -9,18 +9,18 @@ import { formatBlogPostDate } from '../../utils/helpers'
 import { Code } from 'astro/components'
 import { PortableTextComponentsProvider ,PortableText } from '@portabletext/react'
 
-const { post } = Astro.props
 
 export async function getStaticPaths() {
   const params = {slug: post.slug.current }
   const allBlogPosts = await client.fetch(SinglePost, params)
-
+  
   return await allBlogPosts.map((post: Post) => ({
     params: { slug: post.slug.current },
     props: { post },
   }))
 }
 
+const { post } = Astro.props
 ---
 
 <BlogPostLayout
