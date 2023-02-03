@@ -28,7 +28,7 @@ export const AllPosts = `*[_type == 'post'][0...6] {
 }`;
 
 
-export const SinglePost = `*[_type == 'post' && title == $title][0...6] {
+export const SinglePost = `*[_type == 'post' && slug.current == $slug][0...6] {
   _id,
   _createdAt,
   publishedAt,
